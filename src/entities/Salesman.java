@@ -2,7 +2,7 @@ package entities;
 
 public class Salesman {
 	
-	private Integer cpf;
+	private Long cpf;
 	private String name;
 	private Double salary;
 	
@@ -10,17 +10,17 @@ public class Salesman {
 		
 	}
 
-	public Salesman(Integer cpf, String name, Double salary) {
+	public Salesman(Long cpf, String name, Double salary) {
 		this.cpf = cpf;
 		this.name = name;
 		this.salary = salary;
 	}
 
-	public Integer getCpf() {
+	public Long getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Integer cpf) {
+	public void setCpf(Long cpf) {
 		this.cpf = cpf;
 	}
 
@@ -38,5 +38,10 @@ public class Salesman {
 
 	public void setSalary(Double salary) {
 		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return "Salesman [cpf=" + cpf + ", name=" + name + ", salary=" + salary + "]";
 	}
 }

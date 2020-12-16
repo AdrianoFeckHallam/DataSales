@@ -40,4 +40,9 @@ public class Sale {
 	public void setSalesmanName(String salesmanName) {
 		this.salesmanName = salesmanName;
 	}
+
+	@Override
+	public String toString() {
+		return "Sale [saleId=" + saleId + ", items=" + items + ", salesmanName=" + salesmanName + "]";
+	}
 }

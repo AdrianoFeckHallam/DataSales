@@ -38,4 +38,9 @@ public class Item {
 	public void setItemPrice(Double itemPrice) {
 		this.itemPrice = itemPrice;
 	}
+
+	@Override
+	public String toString() {
+		return "Item [itemID=" + itemID + ", itemQuantity=" + itemQuantity + ", itemPrice=" + itemPrice + "]";
+	}
 }

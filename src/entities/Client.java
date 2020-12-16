@@ -2,7 +2,7 @@ package entities;
 
 public class Client {
 	
-	private Integer cnpj;
+	private Long cnpj;
 	private String name;
 	private String businessArea;
 	
@@ -10,17 +10,17 @@ public class Client {
 		
 	}
 
-	public Client(Integer cnpj, String name, String businessArea) {
+	public Client(Long cnpj, String name, String businessArea) {
 		this.cnpj = cnpj;
 		this.name = name;
 		this.businessArea = businessArea;
 	}
 
-	public Integer getCnpj() {
+	public Long getCnpj() {
 		return cnpj;
 	}
 
-	public void setCnpj(Integer cnpj) {
+	public void setCnpj(Long cnpj) {
 		this.cnpj = cnpj;
 	}
 
@@ -38,5 +38,10 @@ public class Client {
 
 	public void setBusinessArea(String businessArea) {
 		this.businessArea = businessArea;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [cnpj=" + cnpj + ", name=" + name + ", businessArea=" + businessArea + "]";
 	}
 }
