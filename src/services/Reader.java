@@ -1,4 +1,4 @@
-package buffer;
+package services;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,26 +36,28 @@ public class Reader extends Buffer {
 		
 		File[] files = dirIn.listFiles(File::isFile);
 		for (File file : files) {
-			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-				String line = br.readLine();
-				
-				while (line != null) {
-					if(line.contains("001ç")) {
-						listSalesman.add(SalesmanAction.getList(line));
-						
-						line = br.readLine();
-					} else if (line.contains("002ç")) {
-						listClient.add(ClientAction.getList(line));
+			if(file.toString().endsWith(".txt")) {
+				try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+					String line = br.readLine();
 					
-						line = br.readLine();
-					} else if (line.contains("003ç")) {
-						listSale.add(SaleAction.getList(line));
+					while (line != null) {
+						if(line.contains("001ç")) {
+							listSalesman.add(SalesmanAction.getList(line));
+							
+							line = br.readLine();
+						} else if (line.contains("002ç")) {
+							listClient.add(ClientAction.getList(line));
 						
-						line = br.readLine();
+							line = br.readLine();
+						} else if (line.contains("003ç")) {
+							listSale.add(SaleAction.getList(line));
+							
+							line = br.readLine();
+						}
 					}
+				} catch (IOException e) {
+					System.out.println("Error: " + e.getMessage());
 				}
-			} catch (IOException e) {
-				System.out.println("Error: " + e.getMessage());
 			}
 		}
 	}

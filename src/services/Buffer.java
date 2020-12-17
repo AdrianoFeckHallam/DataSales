@@ -1,4 +1,4 @@
-package buffer;
+package services;
 
 abstract class Buffer {
 	

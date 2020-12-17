@@ -1,10 +1,14 @@
 package application;
 
-import buffer.Writer;
+import services.Watcher;
 
 public class Program {
 	
 	public static void main(String[] args) {
-			Writer.getWriter();
+		try {
+			Watcher.loadigWatcher();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

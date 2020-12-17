@@ -1,6 +1,6 @@
 package data;
 import action.SaleAction;
-import buffer.Reader;
+import services.Reader;
 
 public class DataOut {
 	
