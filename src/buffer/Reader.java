@@ -23,12 +23,12 @@ public class Reader extends Buffer {
 	public static Reader getReader() {
 		Reader reader = new Reader();
 		
-		reader.getReader(getHome());
+		reader.loadingReader(getHome());
 		
 		return reader;
 	}
 	
-	public void getReader(String home) {
+	public void loadingReader(String home) {
 		File dirIn = new File(home + "\\data\\in");
 		if (!dirIn.exists()) {
 			dirIn.mkdirs();
