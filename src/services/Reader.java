@@ -14,7 +14,7 @@ import entities.Client;
 import entities.Sale;
 import entities.Salesman;
 
-public class Reader extends Buffer {
+public class Reader extends Directory {
 	
 	private List<Salesman> listSalesman = new ArrayList<>();
 	private List<Client> listClient = new ArrayList<>();

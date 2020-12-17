@@ -8,7 +8,7 @@ import java.nio.file.StandardWatchEventKinds;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 
-public class Watcher extends Buffer {
+public class Watcher extends Directory {
 	
 	public static void loadigWatcher() throws InterruptedException {
 		try {
@@ -18,21 +18,20 @@ public class Watcher extends Buffer {
 			
 			Path directory = Paths.get((pathToDir));
 			directory.register(watcher, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_DELETE);
+			
 			WatchKey key;
 			boolean first = true;
 			while (true) {
-				
 				if (first) {
 					first = false;
 					Writer.getWriter();
 				}
-				
+
 				key = watcher.take();
 			
 				Writer.getWriter();
 				
 				boolean valid = key.reset();
-
 				if (!valid) {
 					break;
 				}

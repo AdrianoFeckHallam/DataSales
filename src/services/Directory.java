@@ -1,6 +1,6 @@
 package services;
 
-abstract class Buffer {
+abstract class Directory {
 	
 	private static String home = System.getProperty("user.home");
 

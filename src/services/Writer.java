@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import data.DataOut;
 
-public class Writer extends Buffer {
+public class Writer extends Directory {
 	
 	public static void getWriter() {
 		Writer writer = new Writer();

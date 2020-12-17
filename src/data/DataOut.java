@@ -13,7 +13,7 @@ public class DataOut {
 		quantClient = reader.getListClient().size();
 		quantSalesman = reader.getListSalesman().size();
 		maxIdSales = SaleAction.getMaxIdSales(reader.getListSale());
-		worstSalesman = "Adriano";
+		worstSalesman = SaleAction.getWorstSalesman(reader.getListSale());
 	}
 	
 	public Integer getQuantClient() {
