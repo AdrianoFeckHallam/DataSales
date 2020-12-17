@@ -5,9 +5,10 @@ import java.util.List;
 import entities.Item;
 import entities.Sale;
 
-public class SaleAction {
+public class SaleAction implements Action {
 
-	public static Sale getList(String line){
+	@Override
+	public Sale getList(String line) {
 		String[] collumn = line.split("ç");
 		
 		int saleId = Integer.parseInt(collumn[1]);

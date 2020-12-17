@@ -16,7 +16,7 @@ public class Watcher extends Directory {
 		try {
 			WatchService watcher = FileSystems.getDefault().newWatchService();
 			
-			String pathToDir = getHome() + "\\data\\in";
+			String pathToDir = getHome() + getDirIn();
 			
 			Path directory = Paths.get((pathToDir));
 			directory.register(watcher, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_DELETE);

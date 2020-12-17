@@ -9,24 +9,20 @@ import data.DataOut;
 
 public class Writer extends Directory {
 	
-	public static void getWriter() {
-		Writer writer = new Writer();
-		
-		writer.loadingWriter(Reader.getReader());
+	public static void getWriter() {		
+		loadingWriter(Reader.getReader());
 	}
 	
-	public void loadingWriter(Reader reader) {
-		File dirOut = new File(getHome() + "\\data\\out");
+	public static void loadingWriter(Reader reader) {
+		File dirOut = new File(getHome() + getDirOut());
 		if (!dirOut.exists()) {
 			dirOut.mkdirs();
 		}
+				
+		DataOut.loadingDataOut(reader);
 		
-		DataOut dataOp = new DataOut();
-		
-		dataOp.loadingDataOut(reader);
-		
-		String[] lines = new String[] {"Quantidade de clientes no arquivo de entrada: " + dataOp.getQuantClient(), "Quantidade de vendedores no arquivo de entrada: " + dataOp.getQuantSalesman(),
-				"ID da venda mais cara: " + dataOp.getMaxIdSales(), "O pior vendedor: " + dataOp.getWorstSalesman()};
+		String[] lines = new String[] {"Quantidade de clientes no arquivo de entrada: " + DataOut.getQuantClient(), "Quantidade de vendedores no arquivo de entrada: " + DataOut.getQuantSalesman(),
+				"ID da venda mais cara: " + DataOut.getMaxIdSales(), "O pior vendedor: " + DataOut.getWorstSalesman()};
 		
 		String path = dirOut + "\\out.txt";
 		

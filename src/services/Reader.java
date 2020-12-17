@@ -7,9 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import action.ClientAction;
-import action.SaleAction;
-import action.SalesmanAction;
+import data.DataIn;
 import entities.Client;
 import entities.Sale;
 import entities.Salesman;
@@ -23,13 +21,13 @@ public class Reader extends Directory {
 	public static Reader getReader() {
 		Reader reader = new Reader();
 		
-		reader.loadingReader(getHome());
+		reader.loadingReader();
 		
 		return reader;
 	}
 	
-	public void loadingReader(String home) {
-		File dirIn = new File(home + "\\data\\in");
+	public void loadingReader() {
+		File dirIn = new File(getHome() + getDirIn());
 		if (!dirIn.exists()) {
 			dirIn.mkdirs();
 		}
@@ -42,15 +40,15 @@ public class Reader extends Directory {
 					
 					while (line != null) {
 						if(line.contains("001ç")) {
-							listSalesman.add(SalesmanAction.getList(line));
+							listSalesman.add(DataIn.getSalesmanAction().getList(line));
 							
 							line = br.readLine();
 						} else if (line.contains("002ç")) {
-							listClient.add(ClientAction.getList(line));
+							listClient.add(DataIn.getClientAction().getList(line));
 						
 							line = br.readLine();
 						} else if (line.contains("003ç")) {
-							listSale.add(SaleAction.getList(line));
+							listSale.add(DataIn.getSaleAction().getList(line));
 							
 							line = br.readLine();
 						}

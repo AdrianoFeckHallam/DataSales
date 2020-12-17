@@ -2,9 +2,9 @@ package action;
 
 import entities.Salesman;
 
-public class SalesmanAction {
-	
-	public static Salesman getList(String line){
+public class SalesmanAction implements Action {
+	@Override
+	public Salesman getList(String line) {
 		String[] collumn = line.split("ç");
 		
 		Long cpf = Long.parseLong(collumn[1]);

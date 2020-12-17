@@ -2,9 +2,9 @@ package action;
 
 import entities.Client;
 
-public class ClientAction {
-
-	public static Client getList(String line){
+public class ClientAction implements Action {
+	@Override
+	public Client getList(String line) {
 		String[] collumn = line.split("ç");
 		
 		Long cnpj = Long.parseLong(collumn[1]);
